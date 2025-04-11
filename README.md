@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # BookingHotelApp
 =======
 # React + TypeScript + Vite
@@ -56,3 +57,6 @@ export default tseslint.config({
 })
 ```
 >>>>>>> 8acc172 (Initial commit)
+=======
+# BookingApp
+>>>>>>> 267f2f51591a25b5a5b7aaefc4369ca3c49bb102
