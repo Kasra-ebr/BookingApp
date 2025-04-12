@@ -9,23 +9,41 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import Input from "../ComponentProps/Input";
 import Button from "../ComponentProps/Button";
+import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
   const [destination, setDestination] = useState("");
   const [openOptions, setOpenOptions] = useState(false);
+  const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
   const [date, setDate] = useState([
-    {
+     {
       startDate: new Date(),
       endDate: new Date(),
       key: "selection",
     },
   ]);
-  const [openDate, setOpenDate] = useState(false);
+const navigate = useNavigate()
+ const [searchParams, setSearchParams] = useSearchParams()
+ const searchHandler = () => {
+  const encodedParams = createSearchParams({
+    date:JSON.stringify(date),
+    destination,
+    options:JSON.stringify(options)
+  })
+  setSearchParams(encodedParams); 
+
+navigate({
+  pathname:"/hotels",
+  search:encodedParams.toString()
+})
+  console.log(searchParams, "search params set");
+};
+
 
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
@@ -35,6 +53,7 @@ function Header() {
       };
     });
   };
+
 
   return (
     <div className="header">
@@ -91,7 +110,7 @@ function Header() {
         </div>
         <span className="seprator"></span>
         <div className="headerSearchItem">
-          <Button className="headerSearchBtn">
+          <Button className="headerSearchBtn" onClick={searchHandler}>
             <HiSearch className="search-icon header-Icon" />
           </Button>
         </div>

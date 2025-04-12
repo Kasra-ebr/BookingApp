@@ -1,13 +1,13 @@
 import useFetch from "../Hooks/useFetch";
 
 function LocationList() {
-  const { error, location } = useFetch();
+  const { isLoading, location } = useFetch();
 
   return (
     <div className="nearbyLocation">
       <h2>Nearby Lcoation</h2>
-      {error ? (
-        <div style={{ color: "red" }}>{error}</div>
+      {isLoading ? (
+        <div style={{ color: "red" }}>{isLoading}</div>
       ) : (
         <div className="locationList">
           {location?.map((loc) => (
@@ -15,9 +15,9 @@ function LocationList() {
               <img src={loc?.xl_picture_url} alt={loc?.name} />
               <div className="locationItemDesc">
                 <p className="location">{loc.smart_location}</p>
-                <span className="name">{loc?.name}</span>
+                <span className="name">{loc.name}</span>
                 <p className="price">
-                  €{loc?.price}
+                  €{loc.price}
                   <span>/night </span>
                 </p>
               </div>
