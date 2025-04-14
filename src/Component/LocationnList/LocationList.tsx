@@ -1,7 +1,7 @@
 import useFetch from "../Hooks/useFetch";
 
 function LocationList() {
-  const { isLoading, location } = useFetch();
+  const {  data : location,isLoading } = useFetch();
 
   return (
     <div className="nearbyLocation">

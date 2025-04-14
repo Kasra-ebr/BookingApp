@@ -1,6 +1,7 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 
-function Button({ children, ...rest }) {
+type IButton = ComponentProps<"button">
+function Button({ children, ...rest }:IButton) {
   return <button {...rest}>{children}</button>;
 }
 

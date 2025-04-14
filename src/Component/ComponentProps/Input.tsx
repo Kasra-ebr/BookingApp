@@ -1,6 +1,8 @@
 import React from 'react'
+type IInput = ComponentProps<"input">
 
-function Input({...rest}) {
+
+function Input({...rest}:IInput) {
   return (
     <input {...rest}></input>
   )

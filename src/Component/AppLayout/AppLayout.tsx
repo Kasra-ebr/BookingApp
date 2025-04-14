@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom'
 
 function AppLayout() {
   return (
-    <div>
-        <div>
+    <div className='appLayOut'>
+        <div className='sideBar'>
             <Outlet/>
         </div>
-        <div>map</div>
+        <div className='mapContainer'>map</div>
     </div>
   )
 }
