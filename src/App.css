@@ -179,31 +179,52 @@
 }
 
 .appLayOut{
-  margin: 0 auto;
+  display:flex;
+justify-content: center;
 
-  width: 100%;
-  height: 100vh;
-  display: flex;
+flex-direction: row;
+box-sizing: border-box;
+
+
 
 }
 .sideBar{
-  display: inline-block;
-  width: 35%;
+  overflow: hidden;
+  width: 27vw;
+
 
 }
 
 .mapContainer{
-  width: 50%;
+  border: 2px solid red;
+  width: 25vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .searchList{
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 4px;
   gap: 1rem;
   width: 40vw;
+  box-sizing: border-box;
 }
-
+.searchList p {
+  display: block;
+ 
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.searchList h2 {
+ 
+  display: inline-block;
+  width: 40vw;
+}
 .searchItem{
   margin-top: 5px;
 

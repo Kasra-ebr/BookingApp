@@ -7,7 +7,7 @@ function AppLayout() {
         <div className='sideBar'>
             <Outlet/>
         </div>
-        <div className='mapContainer'>map</div>
+        <div className='mapContainer'>mapasd</div>
     </div>
   )
 }
