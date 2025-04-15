@@ -109,7 +109,7 @@ function Header() {
 
         <span className="seprator"></span>
 
-        {/* Date Picker */}
+
         <div className="headerSearchItem">
           <HiCalendar className="date-icon header-Icon" />
           <div onClick={() => setOpenDate(!openDate)}>

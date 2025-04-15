@@ -2,20 +2,10 @@ import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { IHotel } from "./../../Type/Type";
+import { useHotelsContext } from "../Context/HotelProvider";
 
 function Hotels() {
-  const [searchParams] = useSearchParams();
-
-  const destination = searchParams.get("destination") || "";
-  const optionsParam = searchParams.get("options");
-  const room: number = optionsParam ? JSON.parse(optionsParam).room : 1;
-
-  const {
-    data: hotels,
-    error,
-    isLoading,
-  } = useFetch<IHotel[]>(`q=${destination}&accommodates_gte=${room}`);
-
+  const {hotels, error, isLoading} = useHotelsContext()
   if (error) return <div>Please try again</div>;
 
   return (

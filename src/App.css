@@ -1,3 +1,4 @@
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 .header {
   display: flex;
   justify-content: center;
@@ -178,32 +179,19 @@
   margin: 0 7px;
 }
 
-.appLayOut{
-  display:flex;
-justify-content: center;
+.appLayOut {
+  display: flex;
+  justify-content: center;
 
-flex-direction: row;
-box-sizing: border-box;
-
-
-
-}
-.sideBar{
-  overflow: hidden;
-  width: 27vw;
-
-
-}
-
-.mapContainer{
-  border: 2px solid red;
-  width: 25vw;
-  height: 100vh;
-  overflow: hidden;
+  flex-direction: row;
   box-sizing: border-box;
 }
-.searchList{
+.sideBar {
+  overflow: hidden;
+  width: 30vw;
+}
 
+.searchList {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -214,33 +202,31 @@ box-sizing: border-box;
 }
 .searchList p {
   display: block;
- 
+
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .searchList h2 {
- 
   display: inline-block;
   width: 40vw;
 }
-.searchItem{
+.searchItem {
   margin-top: 5px;
 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-.searchItem img{
-
+.searchItem img {
   object-position: center;
   width: 6rem;
   height: 6rem;
   object-fit: cover;
   border-radius: 1rem;
 }
-.searchItemDesc{
+.searchItemDesc {
   margin-left: 6px;
   font-size: 12px;
 }
@@ -248,4 +234,114 @@ box-sizing: border-box;
   .sidebar {
     width: 50%;
   }
+}
+
+.mapContainer {
+  flex: 2;
+  background-color: var(--text-100);
+  width: 45vw;
+}
+.map {
+  height: 90vh;
+  width: 100%;
+}
+.mapContainer button.getLocation {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--primary-600);
+  box-shadow: 0 0 10px var(--primary-600);
+  color: #fff;
+  z-index: 1000;
+}
+
+/* room detail */
+.room {
+  text-align: start;
+
+  width: 28vw;
+  height: 30vh;
+  max-width: 1280px;
+}
+.roomDetails img {
+  width: 28vw;
+  height: 28vh;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+.bookmark_list {
+  margin-top: 1rem;
+}
+.bookmark_Item {
+  margin-right: 13px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-400);
+  border-radius: 1rem;
+  padding: 1rem;
+
+}
+
+.bookmark_List .bookmark_Item.current-bookmark {
+  border: 2px solid var(--primary-600);
+  background-color: var(--text-100);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.btn--primary {
+  background-color: var(--primary-600);
+  color: #fff;
+}
+
+.btn--back {
+  border: 1px solid var(--text-400);
+  width: 5vw;
+  margin-bottom: 5px
+}
+
+.single__bookmark{
+  border: 1px solid var(--text-400);
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 9px;
+}
+
+.bookmark__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1px;
+  box-sizing: border-box;
+}
+
+.bookmark__container span {
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+
+.form .formControl {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.formControl label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.formControl input {
+  border: 1px solid var(--text-400);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
 }

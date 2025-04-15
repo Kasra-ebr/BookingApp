@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getHotels } from "../../Server/server"; // assuming this function handles query logic
+import { getHotels } from "../../Server/server";
 
 function useFetch<T = any>(query: string = "") {
   const [data, setData] = useState<T | null>(null);
@@ -10,7 +10,6 @@ function useFetch<T = any>(query: string = "") {
     setIsLoading(true);
     getHotels(query)
       .then((res) => {
-        console.log("Fetched data:", res);
         setData(res);
         setIsLoading(false);
       })
