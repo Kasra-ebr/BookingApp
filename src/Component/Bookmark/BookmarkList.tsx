@@ -1,12 +1,18 @@
 import React from "react";
-import { useBookmarkContext } from "../Context/BookmarkProvider";
+import { useBookmark, useBookmarkContext } from "../Context/BookmarkProvider";
 import ReactCountryFlag from "react-country-flag";
 import { Link } from "react-router-dom";
+import Button from "../ComponentProps/Button";
+import { FaTrash } from "react-icons/fa";
 
 function BookmarkList() {
-  const { bookmarks, isLoading } = useBookmarkContext();
-
+  const { bookmarks, isLoading,setBookmarks } = useBookmark();
+  bookmarks
   if (isLoading) return;
+
+  const handleDelete = (id: string) => {
+    setBookmarks((prev) => prev.filter((item) => item.id !== id));
+  };
   return (
     <div >
       <h2>Bookmark List </h2>
@@ -18,6 +24,11 @@ function BookmarkList() {
                 <ReactCountryFlag svg countryCode={item?.countryCode} />
                 <strong>{item?.cityName}</strong>
                 <span>{item?.country}</span> 
+                <div>
+                  <Button onClick={()=> handleDelete(item.id as string)}>
+                      <FaTrash/>
+                  </Button>
+                </div>
               </div>
             </Link>
           );

@@ -80,8 +80,8 @@
 .guestOptions {
   position: absolute;
   top: 100%;
-  left: -63px;
-  width: 330px;
+  left: -50px;
+  width: 267px;
   border: 1px solid var(--text-100);
   display: flex;
   flex-direction: column;
@@ -100,6 +100,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
+  border-radius: 10px;
   padding: 1.3rem;
 }
 
@@ -240,6 +241,7 @@
   flex: 2;
   background-color: var(--text-100);
   width: 45vw;
+  z-index: -10;
 }
 .map {
   height: 90vh;
@@ -326,6 +328,54 @@
 .bookmark__container span {
   font-weight: bold;
   margin-left: 3px;
+}
+
+
+.form .formControl {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.formControl label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.formControl input {
+  border: 1px solid var(--text-400);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+
+/* bookmark page */
+.bookmarkList {
+  margin-top: 1rem;
+}
+.bookmarkItem {
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-400);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bookmarkList .bookmarkItem.current-bookmark {
+  border: 2px solid var(--primary-600);
+  background-color: var(--text-100);
+}
+
+.currentBookmark h2 {
+  margin: 1rem 0;
+}
+
+.bookmarkItem .trash {
+  color: var(--rose-500);
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 

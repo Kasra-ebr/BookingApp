@@ -1,11 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Map from '../Map/Map'
+import { useBookmark } from '../Context/BookmarkProvider'
 
-import { useBookmarkContext } from '../Context/BookmarkProvider'
+
 
 function BookmarkLayout() {
-  const {bookmarks}= useBookmarkContext()
+  const {bookmarks}= useBookmark()
   return (
     <div className='appLayOut'>
         <div className='sideBar'>

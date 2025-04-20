@@ -11,6 +11,7 @@ import Input from "../ComponentProps/Input";
 import Button from "../ComponentProps/Button";
 import {
   createSearchParams,
+  NavLink,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
@@ -91,6 +92,7 @@ function Header() {
 
   return (
     <div className="header">
+         <NavLink to="/bookmark">Bookmarks</NavLink>
       <div className="headerSearch">
     
         <div className="headerSearchItem">
@@ -152,7 +154,7 @@ function Header() {
 
         <span className="seprator"></span>
 
-        {/* Search Button */}
+    
         <div className="headerSearchItem">
           <Button className="headerSearchBtn" onClick={searchHandler}>
             <HiSearch className="search-icon header-Icon" />

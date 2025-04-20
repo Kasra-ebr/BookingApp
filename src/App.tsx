@@ -7,10 +7,12 @@ import Hotels from "./Component/Hotels/Hotels";
 import { HotelContextProvider } from "./Component/Context/HotelProvider";
 import SingleHotel from "./Component/SingleHotel.tsx/SingleHotel";
 import BookmarkLayout from "./Component/Bookmark/BookmarkLayout";
-import { BookmarkContextProvider } from "./Component/Context/BookmarkProvider";
-import BookmarkList from "./Component/Bookmark/BookmarkList";
+
+import Bookmark from "./Component/Bookmark/Bookmark";
 import SingleBookmark from "./Component/Bookmark/SingleBookmark";
-import AddNewBookmark from "./Component/Bookmark/AddNewBookmark";
+
+import { BookmarkContextProvider } from "./Component/Context/BookmarkProvider";
+import AddNewBookmark from "./Component/AddNewBookmark/AddNewBookmark";
 
 function App() {
   return (
@@ -24,9 +26,9 @@ function App() {
             <Route path=":id" element={<SingleHotel />} />
           </Route>
           <Route path="/bookmark" element={<BookmarkLayout />}>
-            <Route index element={<BookmarkList/>} />
-            <Route path=":id" element={<SingleBookmark/>} />
-            <Route path="add" element={<AddNewBookmark/>} />
+            <Route index element={<Bookmark />} />
+            <Route path=":id" element={<SingleBookmark />} />
+            <Route path="add" element={<AddNewBookmark />} />
           </Route>
         </Routes>
       </HotelContextProvider>
