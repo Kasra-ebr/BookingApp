@@ -1,4 +1,4 @@
-import { Form, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import useUrlLocation from "../Hooks/useUrlLocation";
 import { useEffect, useState } from "react";
 import './../../App.css';
@@ -9,6 +9,7 @@ import Input from "../ComponentProps/Input";
 import ReactCountryFlag from "react-country-flag";
 import Button from "../ComponentProps/Button";
 import { useBookmark } from "../Context/BookmarkProvider";
+import FormInput from "../ComponentProps/Form";
 
 
 
@@ -76,7 +77,7 @@ function AddNewBookmark() {
   return (
     <div>
       <h2>Bookmark New Location</h2>
-      <Form className="form" onSubmit={handleSubmit}>
+      <FormInput className="form" onSubmit={handleSubmit}>
         <div className="formControl">
           <label htmlFor="cityName">City Name</label>
           <Input
@@ -106,11 +107,11 @@ function AddNewBookmark() {
               navigate(-1);
             }}
           >
-            &larr; Back
+           Back
           </Button>
           <Button className="btn btn--primary">Add</Button>
         </div>
-      </Form>
+      </FormInput>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
 import Input from "../ComponentProps/Input";
 import Button from "../ComponentProps/Button";
+import { IoHomeSharp } from "react-icons/io5";
 import {
   createSearchParams,
   NavLink,
@@ -50,8 +51,10 @@ interface IOptionItems {
 // ---------------- Header Component ----------------
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [destination, setDestination] = useState<string>( searchParams.get("destination") ||"");
-  console.log(destination,"des")
+  const [destination, setDestination] = useState<string>(
+    searchParams.get("destination") || ""
+  );
+  console.log(destination, "des");
   const [openOptions, setOpenOptions] = useState<boolean>(false);
   const [openDate, setOpenDate] = useState<boolean>(false);
   const [options, setOptions] = useState<IOptions>({
@@ -68,7 +71,6 @@ function Header() {
   ]);
 
   const navigate = useNavigate();
-
 
   const searchHandler = () => {
     const encodedParams = createSearchParams({
@@ -92,9 +94,14 @@ function Header() {
 
   return (
     <div className="header">
-         <NavLink to="/bookmark">Bookmarks</NavLink>
+      <NavLink
+        to="/bookmark"
+        className={'bookmarks active'
+        }
+      >
+        Bookmarks
+      </NavLink>
       <div className="headerSearch">
-    
         <div className="headerSearchItem">
           <MdLocationOn className="header-Icon locationIcon" />
           <span className="seprator"></span>
@@ -110,7 +117,6 @@ function Header() {
         </div>
 
         <span className="seprator"></span>
-
 
         <div className="headerSearchItem">
           <HiCalendar className="date-icon header-Icon" />
@@ -154,12 +160,14 @@ function Header() {
 
         <span className="seprator"></span>
 
-    
         <div className="headerSearchItem">
           <Button className="headerSearchBtn" onClick={searchHandler}>
             <HiSearch className="search-icon header-Icon" />
           </Button>
         </div>
+        <Button className="btn btn--primary" onClick={() => navigate("/")}>
+            <IoHomeSharp size={18}/>
+        </Button>
       </div>
     </div>
   );
@@ -197,13 +205,7 @@ function GuestOptionList({
   );
 }
 
-
-function OptionItem({
-  options,
-  minLimit,
-  type,
-  handleOptions,
-}: IOptionItems) {
+function OptionItem({ options, minLimit, type, handleOptions }: IOptionItems) {
   return (
     <div className="guestOptionItem">
       <span className="optionText">{type}</span>
